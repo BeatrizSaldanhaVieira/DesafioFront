@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'DesafioFront';
+export class AppComponent implements OnInit {
+  dados: any;
+  title="Desafio";
+
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit() {
+    this.apiService.getDados().subscribe(response => {
+      this.dados = response;
+      console.log('Resposta da API:', this.dados);
+    }, error => {
+      console.error('Erro ao buscar dados:', error);
+    });
+  }
 }
