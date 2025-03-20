@@ -1,5 +1,22 @@
 # DesafioFront
+Descrição
+Este projeto consiste em um sistema de gerenciamento de empresas e fornecedores, permitindo realizar operações de cadastro e listagem de empresas e fornecedores, com filtros e validações. A aplicação utiliza C# (Entity Framework) no Back-end e Angular no Front-end.
 
+Funcionalidades
+Cadastro e Listagem de Empresas: CNPJ, Nome Fantasia e CEP.
+Cadastro e Listagem de Fornecedores: CPF/CNPJ, Nome, E-mail, CEP, RG (se pessoa física), Data de Nascimento (se pessoa física).
+Validação de Dados:
+O CNPJ/CPF deve ser único.
+Não é permitido cadastrar fornecedores menores de idade no Paraná.
+Validação de CEP através da API cep.la.
+Relacionamento: Uma empresa pode ter vários fornecedores e um fornecedor pode trabalhar para várias empresas.
+Filtros: Pesquisa de fornecedores por nome ou CPF/CNPJ.
+
+Front-End
+
+Angular para a interface de usuário.
+Formulários para cadastro de empresas e fornecedores.
+Filtros para pesquisa de fornecedores por nome e CPF/CNPJ.
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
 
 ## Development server
